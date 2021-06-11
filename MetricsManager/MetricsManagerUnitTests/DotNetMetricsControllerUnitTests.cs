@@ -1,16 +1,16 @@
-using MetricsManager.Controllers;
+﻿using MetricsManager.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Xunit;
 
 namespace MetricsManagerUnitTests
 {
-    public class CpuMetricsControllerUnitTests
+    public class DotNetMetricsControllerUnitTests
     {
-        private CpuMetricsController controller;
-        public CpuMetricsControllerUnitTests()
+        private DotNetMetricsController controller;
+        public DotNetMetricsControllerUnitTests()
         {
-            controller = new CpuMetricsController();
+            controller = new DotNetMetricsController();
         }
         [Fact]
         public void GetMetricsFromAgent_ReturnsOk()
