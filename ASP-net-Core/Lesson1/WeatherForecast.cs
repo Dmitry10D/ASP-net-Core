@@ -15,17 +15,15 @@ namespace Lesson1
 
         public List<WeatherForecast> database { get; set; }
 
-        public WeatherForecast(DateTime date, int TempC, string sum)
-        {
-            Date = date;
-            TemperatureC = TempC;
-            Summary = sum;
-
-        }
+       
 
         public void Add(DateTime date, int Tc, string sum)
         {
-            database.Add(new WeatherForecast(date, Tc, sum));
+            var tmp = new WeatherForecast();
+            tmp.Date = date;
+            tmp.TemperatureC = Tc;
+            tmp.Summary = sum;
+            database.Add(tmp);
         }
 
         public void Update(DateTime date, int Tc)
