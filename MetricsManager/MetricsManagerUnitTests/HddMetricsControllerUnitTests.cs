@@ -16,8 +16,11 @@ namespace MetricsManagerUnitTests
         public void GetMetricsFromAgent_ReturnsOk()
         {
             var agentId = 1;
-            
-            var result = controller.GetMetricsFromAgent(agentId);
+
+            var fromTime = DateTimeOffset.FromUnixTimeMilliseconds(0);
+            var toTime = DateTimeOffset.FromUnixTimeMilliseconds(100000);
+
+            var result = controller.GetMetricsFromAgent(agentId, fromTime, toTime);
 
             _ = Assert.IsAssignableFrom<IActionResult>(result);
         }
@@ -25,7 +28,10 @@ namespace MetricsManagerUnitTests
         [Fact]
         public void GetMetricsFromAllCluster_ReturnsOk()
         {
-            var result = controller.GetMetricsFromAllCluster();
+            var fromTime = DateTimeOffset.FromUnixTimeMilliseconds(0);
+            var toTime = DateTimeOffset.FromUnixTimeMilliseconds(100000);
+
+            var result = controller.GetMetricsFromAllCluster(fromTime, toTime);
 
             _ = Assert.IsAssignableFrom<IActionResult>(result);
         }

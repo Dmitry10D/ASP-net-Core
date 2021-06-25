@@ -11,8 +11,8 @@ namespace MetricsAgent.Controllers
     [ApiController]
     public class AgentRamController : ControllerBase
     {
-        [HttpGet("ram/available")]
-        public IActionResult CollectMetrics()
+        [HttpGet("ram/available/from/{fromTime}/to/{toTime}")]
+        public IActionResult CollectMetrics([FromRoute] DateTimeOffset fromTime, [FromRoute] DateTimeOffset toTime)
         {
             return Ok();
         }

@@ -11,8 +11,8 @@ namespace MetricsAgent.Controllers
     [ApiController]
     public class AgentHddController : ControllerBase
     {
-        [HttpGet("hdd/left")]
-        public IActionResult CollectMetrics()
+        [HttpGet("hdd/left/from/{fromTime}/to/{toTime}")]
+        public IActionResult CollectMetrics([FromRoute] DateTimeOffset fromTime, [FromRoute] DateTimeOffset toTime)
         {
             return Ok();
         }

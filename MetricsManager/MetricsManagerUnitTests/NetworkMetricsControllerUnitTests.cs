@@ -17,8 +17,8 @@ namespace MetricsManagerUnitTests
         {
             var agentId = 1;
 
-            var fromTime = TimeSpan.FromSeconds(0);
-            var toTime = TimeSpan.FromSeconds(100);
+            var fromTime = DateTimeOffset.FromUnixTimeMilliseconds(0);
+            var toTime = DateTimeOffset.FromUnixTimeMilliseconds(100000);
 
             var result = controller.GetMetricsFromAgent(agentId, fromTime, toTime);
 
@@ -28,8 +28,8 @@ namespace MetricsManagerUnitTests
         [Fact]
         public void GetMetricsFromAllCluster_ReturnsOk()
         {
-            var fromTime = TimeSpan.FromSeconds(0);
-            var toTime = TimeSpan.FromSeconds(100);
+            var fromTime = DateTimeOffset.FromUnixTimeMilliseconds(0);
+            var toTime = DateTimeOffset.FromUnixTimeMilliseconds(100000);
 
             var result = controller.GetMetricsFromAllCluster(fromTime, toTime);
 
