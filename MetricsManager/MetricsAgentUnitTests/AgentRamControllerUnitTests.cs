@@ -2,15 +2,17 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Xunit;
+using Microsoft.Extensions.Logging;
 
 namespace MetricsManagerUnitTests
 {
     public class AgentRamControllerUnitTests
     {
         private AgentRamController controller;
-        public AgentRamControllerUnitTests()
+        private readonly ILogger<AgentRamController> logger;
+        public AgentRamControllerUnitTests(ILogger<AgentRamController> logger)
         {
-            controller = new AgentRamController();
+            controller = new AgentRamController(logger);
         }
         [Fact]
         public void GetMetricsFromAgent_ReturnsOk()
