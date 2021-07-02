@@ -24,4 +24,10 @@
     <ProjectReference Include="..\MetricsAgent\MetricsAgent.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="..\MetricsAgent\Controllers\" />
+    <Folder Include="..\MetricsAgent\MetricClasses\" />
+    <Folder Include="..\MetricsAgent\DAL\" />
+  </ItemGroup>
+
 </Project>

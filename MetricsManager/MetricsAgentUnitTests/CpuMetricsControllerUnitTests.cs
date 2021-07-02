@@ -1,10 +1,9 @@
 ﻿using System;
 using Xunit;
 using Moq;
-using MetricsAgent.Controllers;
+using MetricsAgent;
 using MetricsAgent.DAL;
-
-
+using MetricsAgent.Controllers;
 
 namespace MetricsAgentUnitTests
 {

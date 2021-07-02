@@ -9,7 +9,7 @@ using MetricsAgent.DAL;
 using MetricsAgent.Requests;
 using MetricsAgent.Responses;
 
-namespace MetricsAgent
+namespace MetricsAgent.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
