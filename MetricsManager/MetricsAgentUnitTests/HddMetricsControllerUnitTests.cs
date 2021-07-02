@@ -7,14 +7,14 @@ using MetricsAgent.Controllers;
 
 namespace MetricsAgentUnitTests
 {
-    public class CpuMetricsControllerUnitTests
+    public class HddMetricsControllerUnitTests
     {
-        private CpuMetricsController controller;
-        private Mock<ICpuMetricsRepository> mock;
-        public CpuMetricsControllerUnitTests()
+        private HddMetricsController controller;
+        private Mock<IHddMetricsRepository> mock;
+        public HddMetricsControllerUnitTests()
         {
-            mock = new Mock<ICpuMetricsRepository>();
-            controller = new CpuMetricsController(mock.Object);
+            mock = new Mock<IHddMetricsRepository>();
+            controller = new HddMetricsController(mock.Object);
         }
         [Fact]
         public void Create_ShouldCall_Create_From_Repository()
@@ -22,17 +22,17 @@ namespace MetricsAgentUnitTests
             // устанавливаем параметр заглушки
             // в заглушке прописываем что в репозиторий прилетит CpuMetric объект
             mock.Setup(repository =>
-            repository.Create(It.IsAny<CpuMetric>())).Verifiable();
+            repository.Create(It.IsAny<HddMetric>())).Verifiable();
             // выполняем действие на контроллере
             var result = controller.Create(new
-            MetricsAgent.Requests.CpuMetricCreateRequest
+            MetricsAgent.Requests.HddMetricCreateRequest
             {
                 Time = DateTimeOffset.FromUnixTimeSeconds(1),
                 Value = 50
             });
             // проверяем заглушку на то, что пока работал контроллер
             // действительно вызвался метод Create репозитория с нужным типом объекта в параметре
-           mock.Verify(repository => repository.Create(It.IsAny<CpuMetric>()),
+           mock.Verify(repository => repository.Create(It.IsAny<HddMetric>()),
            Times.AtMostOnce());
         }
     }
